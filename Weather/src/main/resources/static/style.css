@@ -1,0 +1,59 @@
+.search {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+
+}
+
+.results {
+    position: relative;
+    width: 99%;
+    height: 300px;
+    border: 1px solid black;
+}
+
+.history {
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    height: 40%;
+    width: 20%;
+    border: 1px solid black;
+}
+
+#topleft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 25px;
+}
+
+#topright {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 25px;
+}
+
+#temp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#bottomleft {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+}
+
+#bottomright {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 25px;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Weather</title>
+</head>
+<body>
+
+<div class="search">
+  <form action="/search" method="GET">
+  <input id="search-bar" type="text" name="location">
+  <button type="submit">Go</button>
+  </form>
+<br>
+
+    <div class="results" th:if="${weather != null}">
+
+<div class="weather-icon" th:if="${weather.current.condition.icon}!=null"
+     th:src="'http://openweathermap.org/img/wn/' + ${weather.current.condition.icon}"></div>
+
+    <span id="topleft" th:text="${weather.location.name} + ', ' + ${weather.location.region} ?: 'N/A'">city</span>
+    <button id="topright" th:text="${cf}">C/F</button>
+    <span id="temp" th:text="${weather.current.temp_c} ?: 'N/A'">temp</span>
+    <span id="bottomleft" th:text="${weather.forecast.forecastday[0].day.mintemp_c} ?: 'N/A'">lo</span>
+    <span id="bottomright" th:text="${weather.forecast.forecastday[0].day.maxtemp_c} ?: 'N/A'">hi</span>
+</div>
+
+</div>
+
+<div class="history" th:if="${history != null}">
+    <table>
+        <thead>
+            <tr>
+                <th>City</th>
+                <th>Temperature</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="entry : ${history}">
+                <td th:text="${entry.id}"></td>
+                <td th:text="${entry.location.name}"></td>
+                <td th:text="${entry.location.region}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

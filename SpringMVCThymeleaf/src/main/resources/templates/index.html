@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Welcome
+<span th:text="${user}"></span> <span th:text="${role}"></span>
+</p>
+
+<form action="/submit" method="post">
+Zip code: <label>
+    <input type="text" name="zip">
+</label><br/>
+    <button type="submit">Submit</button>
+</form>
+
+<br>
+
+<form action="/" method="POST">
+    Username: <input type="text" name="username"><br/>
+    Pass: <input type="password" name="password"><br/>
+    <button type="submit">Login</button>
+</form>
+
+<p th:text="${prev}"></p>
+<p th:text="${curr}"></p>
+
+<form action="/product" method="POST">
+    Name: <input type="text" name="name"><br/>
+    Price: <input type="number" name="price"><br/>
+    <button type="submit">Add</button>
+</form>
+<p th:text="${message}"></p>
+</body>
+</html>
